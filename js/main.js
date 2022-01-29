@@ -1,23 +1,3 @@
-const searchEl = document.querySelector('.search');
-const searchInputEl = searchEl.querySelector('input');
-
-searchEl.addEventListener('click', function () {
-    //Logic..
-    searchInputEl.focus();
-});
-
-searchInputEl.addEventListener('focus', function () {
-    //Logic..
-    searchEl.classList.add('focused');
-    searchInputEl.setAttribute('placeholder', '통합검색');
-});
-
-searchInputEl.addEventListener('blur', function () {
-    //Logic..
-    searchEl.classList.remove('focused');
-    searchInputEl.setAttribute('placeholder', '');
-});
-
 const badgeEl = document.querySelector('header .badges');
 
 window.addEventListener('scroll', _.throttle(function () {
@@ -30,7 +10,7 @@ window.addEventListener('scroll', _.throttle(function () {
             display: 'none'
         });
         //상단 올라가는 버튼 보이기!
-        gsap.to('#to-top',.2,{
+        gsap.to('#to-top', .2, {
             x: 0
         });
     } else {
@@ -40,7 +20,7 @@ window.addEventListener('scroll', _.throttle(function () {
             display: 'block'
         });
         //상단올라가는 버튼 숨기기!!
-        gsap.to('#to-top',.2,{
+        gsap.to('#to-top', .2, {
             x: 100
         });
 
@@ -50,8 +30,8 @@ window.addEventListener('scroll', _.throttle(function () {
 
 const toTopEl = document.querySelector('#to-top')
 
-toTopEl.addEventListener('click',function(){
-    gsap.to(window, .7,{
+toTopEl.addEventListener('click', function () {
+    gsap.to(window, .7, {
         scrollTo: 0
     })
 });
@@ -156,7 +136,3 @@ spyEls.forEach(function (spyEl) {
         .setClassToggle(spyEl, 'show')
         .addTo(new ScrollMagic.Controller());
 });
-
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear(); // 올해 2022
- 
